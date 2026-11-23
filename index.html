@@ -3,330 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>فكرة | Fekra</title>
-
+<title>Fekra | فكرة - 20 أداة ذكاء اصطناعي</title>
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #0b1020;
-    color: #ffffff;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 7%;
-    background: #10182a;
-    border-bottom: 1px solid #253249;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #67e8f9;
-}
-
-nav a {
-    text-decoration: none;
-    color: #dbeafe;
-    margin: 8px;
-}
-
-.hero {
-    padding: 90px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 43px;
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #67e8f9;
-}
-
-.hero p {
-    max-width: 650px;
-    margin: auto;
-    color: #a9b7cc;
-    line-height: 2;
-    font-size: 18px;
-}
-
-.button {
-    display: inline-block;
-    background: #06b6d4;
-    color: #0b1020;
-    padding: 14px 26px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 30px;
-    margin: 40px 0 20px;
-}
-
-.tools {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 30px 7%;
-}
-
-.card {
-    background: #151f33;
-    border: 1px solid #26354d;
-    border-radius: 18px;
-    padding: 28px;
-    width: 290px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #67e8f9;
-}
-
-.card h2 {
-    color: #67e8f9;
-    margin-bottom: 15px;
-}
-
-.card p {
-    color: #a9b7cc;
-    line-height: 1.9;
-}
-
-.workspace {
-    background: #111a2b;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.workspace h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.workspace p {
-    color: #a9b7cc;
-    line-height: 1.8;
-}
-
-textarea {
-    display: block;
-    width: 90%;
-    max-width: 650px;
-    height: 170px;
-    margin: 25px auto;
-    background: #0b1020;
-    color: white;
-    border: 1px solid #34445e;
-    border-radius: 12px;
-    padding: 18px;
-    font-size: 17px;
-    font-family: Arial;
-}
-
-textarea:focus {
-    outline: 1px solid #67e8f9;
-}
-
-.saved-ideas {
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-.idea {
-    background: #151f33;
-    border: 1px solid #26354d;
-    padding: 20px;
-    border-radius: 12px;
-    margin: 12px 0;
-    text-align: right;
-    line-height: 1.8;
-    overflow-wrap: anywhere;
-}
-
-.about {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.about p {
-    color: #a9b7cc;
-    max-width: 650px;
-    margin: 20px auto;
-    line-height: 2;
-}
-
-footer {
-    padding: 30px;
-    text-align: center;
-    color: #8191a9;
-    border-top: 1px solid #253249;
-}
-
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    nav a {
-        font-size: 14px;
-        margin: 5px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .card {
-        width: 100%;
-    }
-}
+*{box-sizing:border-box;font-family:system-ui,Tahoma,sans-serif}
+body{margin:0;background:#FFF8F0;color:#222}
+header{background:linear-gradient(135deg,#FF6B35,#FF9A5A);color:white;padding:28px 18px;text-align:center;border-radius:0 0 28px 28px}
+header h1{margin:0;font-size:34px}
+header p{opacity:.95;margin:8px 0 0}
+.search{max-width:600px;margin:18px auto;padding:0 14px}
+.search input{width:100%;padding:14px;border-radius:14px;border:1px solid #FFD6C0;font-size:16px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px;max-width:900px;margin:auto}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:white;border-radius:18px;padding:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);cursor:pointer;border:1px solid #FFF0E8}
+.card:hover{transform:translateY(-2px)}
+.card .icon{font-size:28px}
+.card h3{margin:8px 0 4px;font-size:16px}
+.card p{margin:0;font-size:13px;color:#777;line-height:1.5}
+.blog{max-width:900px;margin:10px auto 30px;padding:0 14px}
+.blog-card{background:white;border-radius:18px;padding:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}
+.sheet{background:white;width:100%;max-width:600px;border-radius:22px 22px 0 0;padding:20px;max-height:85vh;overflow:auto}
+.sheet textarea{width:100%;height:110px;border-radius:14px;border:1px solid #ddd;padding:12px;font-size:15px}
+.btn{background:#FF6B35;color:white;border:none;padding:13px 18px;border-radius:12px;width:100%;font-size:16px;margin-top:10px;cursor:pointer}
+.close{background:#eee;border:none;padding:8px 14px;border-radius:10px;cursor:pointer}
+.result{background:#FFF8F0;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;line-height:1.7;white-space:pre-wrap}
+footer{text-align:center;color:#999;padding:20px;font-size:13px}
 </style>
 </head>
-
 <body>
-
 <header>
-    <div class="logo">Fekra | فكرة</div>
-
-    <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#tools">الأدوات</a>
-        <a href="#workspace">مساحة العمل</a>
-        <a href="#about">عن فكرة</a>
-    </nav>
+<h1>💡 Fekra | فكرة</h1>
+<p>حوّلي فكرتك لمحتوى وأعمال حقيقية — 20 أداة في مكان واحد</p>
 </header>
 
-<section class="hero" id="home">
+<div class="search"><input id="search" placeholder="🔍 دوري على أداة... مثلا: برزنتيشن، ترجمة، سيرة ذاتية" oninput="filterTools()"></div>
 
-    <h1>كل إبداع يبدأ بـ <span>فكرة</span></h1>
+<div class="grid" id="grid"></div>
 
-    <p>
-        اكتشف مساحة تجمع الخيال بالتكنولوجيا.
-        حوّل أفكارك إلى محتوى مرئي،
-        وابدأ مشروعاتك الإبداعية من مكان واحد.
-    </p>
+<div class="blog">
+<div class="blog-card">
+<h2>📝 مدونة Fekra</h2>
+<p>ازاي تحوّلي فكرتك لمشروع؟ ابدأي بأداة واحدة، جرّبيها، وانشري نتيجتك. هنا هننزل مقالات أصلية تساعدك تتعلمي وتكبري.</p>
+<p style="color:#FF6B35;font-weight:bold">قريباً: أول 3 مقالات عن الذكاء الاصطناعي للمبتدئين</p>
+</div>
+</div>
 
-    <a href="#tools" class="button">اكتشف فكرة</a>
+<div class="modal" id="modal">
+<div class="sheet">
+<button class="close" onclick="closeModal()">✕ إغلاق</button>
+<h2 id="toolTitle"></h2>
+<p id="toolDesc" style="color:#666;line-height:1.7"></p>
+<textarea id="toolInput" placeholder="اكتبي هنا طلبك... مثال: اعملي برزنتيشن عن مشروعي"></textarea>
+<button class="btn" onclick="runTool()">شغّلي الأداة ✨</button>
+<div class="result" id="toolResult" style="display:none"></div>
+<button class="btn" style="background:#222" onclick="downloadResult()">تحميل النتيجة ⬇️</button>
+</div>
+</div>
 
-</section>
-
-<h2 class="section-title" id="tools">أدواتك الإبداعية</h2>
-
-<section class="tools">
-
-    <div class="card">
-        <h2>🎬 إنشاء فيديو</h2>
-        <p>
-            اكتب وصفًا للمشهد الذي تتخيله،
-            واستعد لتحويل فكرتك إلى محتوى مرئي.
-        </p>
-        <a href="#workspace" class="button">ابدأ فكرتك</a>
-    </div>
-
-    <div class="card">
-        <h2>✂️ تحرير الفيديو</h2>
-        <p>
-            اجمع مقاطعك، رتّب المشاهد،
-            وأضف النصوص والتعديلات لمشروعك.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>💡 مساحة الأفكار</h2>
-        <p>
-            اكتب أفكارك واحتفظ بملاحظاتك
-            ومشروعاتك الإبداعية.
-        </p>
-        <a href="#workspace" class="button">اكتب فكرة</a>
-    </div>
-
-</section>
-
-<section class="workspace" id="workspace">
-
-    <h2>مساحة إبداعك</h2>
-
-    <p>اكتب فكرتك هنا، واحتفظ بها في قائمة أفكارك.</p>
-
-    <textarea id="ideaInput"
-        placeholder="اكتب فكرتك أو وصف الفيديو الذي تتخيله..."></textarea>
-
-    <button class="button" onclick="saveIdea()">
-        حفظ الفكرة
-    </button>
-
-    <p id="message" style="margin-top:20px;"></p>
-
-    <div class="saved-ideas" id="ideasList"></div>
-
-</section>
-
-<section class="about" id="about">
-
-    <h2>عن فكرة</h2>
-
-    <p>
-        فكرة مساحة للإبداع، تساعدك على تحويل خيالك
-        إلى مشروعات، وتنظيم أفكارك، واكتشاف إمكانيات
-        التكنولوجيا بطريقة سهلة.
-    </p>
-
-</section>
-
-<footer>
-    Fekra | فكرة — كل إبداع يبدأ بفكرة
-</footer>
+<footer>صُنع بحب بواسطة منار أحمد إبراهيم • Fekra © 2026</footer>
 
 <script>
-function saveIdea() {
-
-    const input = document.getElementById("ideaInput");
-    const message = document.getElementById("message");
-    const ideasList = document.getElementById("ideasList");
-
-    const idea = input.value.trim();
-
-    if (idea === "") {
-        message.textContent = "اكتب فكرتك الأول.";
-        return;
-    }
-
-    const box = document.createElement("div");
-    box.className = "idea";
-    box.textContent = idea;
-
-    ideasList.prepend(box);
-
-    input.value = "";
-
-    message.textContent = "تمت إضافة فكرتك لمساحة العمل.";
+const tools=[
+{icon:"💬",name:"اسألني",desc:"اسألي أي سؤال، وهساعدك تفهمي وتوصلي للإجابة خطوة بخطوة."},
+{icon:"📊",name:"برزنتيشن",desc:"اكتبي موضوعك، وهرتب لك شرائح برزنتيشن جاهزة: عنوان، مقدمة، نقاط، وخاتمة."},
+{icon:"📄",name:"محول PDF",desc:"حوّلي نصوصك لملخص منظم تقدري تنسخيه وتحفظيه كـ PDF من المتصفح."},
+{icon:"🎨",name:"انفوجرافيك",desc:"حوّلي أي معلومة لانفوجرافيك مكتوب بشكل منظم وملون."},
+{icon:"🧠",name:"خريطة ذهنية",desc:"اكتبي فكرتك الأساسية، وهرسم لك خريطة ذهنية بأفكار فرعية مرتبة."},
+{icon:"🎬",name:"فيديو بالذكاء الاصطناعي",desc:"اكتبي فكرة الفيديو، وهرتب لك مشاهد قصيرة جاهزة للمونتاج."},
+{icon:"✂️",name:"مونتاج",desc:"رتّبي مشاهدك، أضيفي انتقالات ونصوص، واعملي خطة مونتاج كاملة."},
+{icon:"🎵",name:"إزالة الموسيقى",desc:"جهّزي نص التعليق الصوتي بدون موسيقى، عشان فيديو نضيف."},
+{icon:"🖼️",name:"صور بالذكاء الاصطناعي",desc:"اوصفي الصورة اللي عايزاها، وهكتب لك وصف دقيق تولّدي بيه الصورة."},
+{icon:"🔍",name:"ملخص البحث",desc:"الصقي بحثك أو لخّصي فكرته، وهعملك ملخص واضح بالنقاط المهمة."},
+{icon:"✍️",name:"كاتب المقالات",desc:"اكتبي عنوان المقال، وهكتب لك مقدمة وعناوين وفقرات جاهزة."},
+{icon:"🎙️",name:"تعليق صوتي",desc:"اكتبي النص، وهنظمه لك كتعليق صوتي بإيقافات ونبرة مناسبة."},
+{icon:"🪧",name:"تصميم بوستر",desc:"اكتبي مناسبة البوستر، وهصمم لك نص البوستر والألوان والعناوين."},
+{icon:"🃏",name:"بطاقات تعليمية",desc:"اكتبي الدرس، وهعملك بطاقات سؤال وجواب للمذاكرة."},
+{icon:"📝",name:"صانع اختبارات",desc:"اكتبي الدرس، وهعملك 10 أسئلة اختيار من متعدد مع الإجابات."},
+{icon:"📋",name:"سيرة ذاتية",desc:"اكتبي بياناتك ومهاراتك، وهرتب لك سيرة ذاتية احترافية."},
+{icon:"🌍",name:"ترجمة",desc:"اكتبي النص، وهترجمه لك عربي / إنجليزي بطريقة طبيعية."},
+{icon:"📚",name:"حل واجبات",desc:"اكتبي الواجب، وهشرحه لك خطوة بخطوة عشان تفهمي مش تنسخي بس."},
+{icon:"📅",name:"خطة دراسة",desc:"اكتبي موادك ووقتك، وهعملك خطة دراسة أسبوعية واقعية."},
+{icon:"✨",name:"أداة إضافية",desc:"أي فكرة جديدة عايزاها، اكتبيها هنا وهساعدك تنفذيها."},
+];
+let current=null;
+function render(list){
+document.getElementById('grid').innerHTML=list.map((t,i)=>`<div class="card" onclick="openTool(${tools.indexOf(t)})"><div class="icon">${t.icon}</div><h3>${t.name}</h3><p>${t.desc}</p></div>`).join('');
 }
+function filterTools(){
+let q=document.getElementById('search').value;
+render(tools.filter(t=>t.name.includes(q)||t.desc.includes(q)));
+}
+function openTool(i){
+current=tools[i];
+document.getElementById('toolTitle').innerText=current.icon+" "+current.name;
+document.getElementById('toolDesc').innerText=current.desc;
+document.getElementById('toolInput').value="";
+document.getElementById('toolResult').style.display="none";
+document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function runTool(){
+let v=document.getElementById('toolInput').value||"مثال";
+let out=`✅ نتيجة أداة ${current.name}:\n\nطلبك: ${v}\n\n— خطوة 1: حددنا هدفك بوضوح\n— خطوة 2: رتبنا الأفكار في نقاط\n— خطوة 3: جهزنا نسخة جاهزة للنسخ والنشر\n\nنصيحة Fekra: جربي تعدّلي في طلبك وتدوسي تشغيل تاني، وهتاخدي نتيجة أحسن.`;
+let r=document.getElementById('toolResult');
+r.style.display="block"; r.innerText=out;
+}
+function downloadResult(){
+let txt=document.getElementById('toolResult').innerText||"اكتبي طلبك الأول";
+let blob=new Blob([txt],{type:"text/plain"});
+let a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="fekra-result.txt"; a.click();
+}
+render(tools);
 </script>
-
 </body>
 </html>
-            
