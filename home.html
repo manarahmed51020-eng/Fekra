@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fekra - فكرة | 20 اداة ذكاء اصطناعي</title>
+<style>
+*{box-sizing:border-box;font-family:Tahoma,system-ui,sans-serif}
+body{margin:0;background:#FFF8F0;color:#222}
+header{background:linear-gradient(135deg,#FF6B35,#FF9A5A);color:white;padding:28px 16px;text-align:center;border-radius:0 0 24px 24px}
+header h1{margin:0;font-size:32px}
+header p{margin:8px 0 0;opacity:.95}
+.search{max-width:600px;margin:16px auto;padding:0 14px}
+.search input{width:100%;padding:13px;border-radius:13px;border:1px solid #FFD6C0;font-size:15px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;padding:10px 14px;max-width:920px;margin:auto}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:white;border-radius:17px;padding:15px;box-shadow:0 4px 13px rgba(0,0,0,.06);cursor:pointer;border:1px solid #FFF0E8}
+.card h3{margin:0 0 5px;font-size:15px;color:#FF6B35}
+.card p{margin:0;font-size:12.5px;color:#777;line-height:1.6}
+.blog{max-width:920px;margin:10px auto 24px;padding:0 14px}
+.blog-card{background:white;border-radius:17px;padding:18px;box-shadow:0 4px 13px rgba(0,0,0,.06)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}
+.sheet{background:white;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:18px;max-height:88vh;overflow:auto}
+.sheet textarea{width:100%;height:110px;border-radius:12px;border:1px solid #ddd;padding:11px;font-size:14px}
+.btn{background:#FF6B35;color:white;border:none;padding:13px;border-radius:11px;width:100%;margin-top:10px;font-size:16px;cursor:pointer}
+.btn2{background:#222;color:white;border:none;padding:12px;border-radius:11px;width:100%;margin-top:8px;font-size:15px;cursor:pointer}
+.close{background:#eee;border:none;padding:7px 12px;border-radius:8px;cursor:pointer}
+.result{background:#FFF8F0;border-radius:11px;padding:12px;margin-top:11px;font-size:14px;line-height:1.8;white-space:pre-wrap}
+footer{text-align:center;color:#999;padding:18px;font-size:12px}
+</style>
+</head>
+<body>
+<header><h1>Fekra - فكرة</h1><p>حوّلي فكرتك لمحتوى واعمال حقيقية - 20 اداة في مكان واحد</p></header>
+<div class="search"><input id="search" placeholder="دوري على اداة... مثلا: برزنتيشن، ترجمة، سيرة ذاتية" oninput="filterTools()"></div>
+<div class="grid" id="grid"></div>
+<div class="blog"><div class="blog-card">
+<h2>مدونة Fekra</h2>
+<p>ازاي تحوّلي فكرتك لمشروع؟ ابدأي باداة واحدة، جرّبيها، وانشري نتيجتك. هنا هننزل مقالات اصلية تساعدك تتعلمي وتكبري.</p>
+<p style="color:#FF6B35;font-weight:bold">قريبا: اول 3 مقالات عن الذكاء الاصطناعي للمبتدئين</p>
+</div></div>
+<div class="modal" id="modal"><div class="sheet">
+<button class="close" onclick="closeModal()">اغلاق</button>
+<h2 id="toolTitle"></h2><p id="toolDesc" style="color:#666;line-height:1.7"></p>
+<textarea id="toolInput" placeholder="اكتبي هنا طلبك... مثال: اعملي برزنتيشن عن مشروعي"></textarea>
+<button class="btn" onclick="runTool()">شغّلي الاداة</button>
+<div class="result" id="toolResult" style="display:none"></div>
+<button class="btn2" onclick="downloadResult()">تحميل النتيجة</button>
+</div></div>
+<footer>صُنع بحب بواسطة منار أحمد إبراهيم - Fekra 2026</footer>
+<script>
+const tools=[
+["اسألني","اسألي اي سؤال، وهنساعدك تفهمي وتوصلي للاجابة خطوة بخطوة."],
+["برزنتيشن","اكتبي موضوعك، وهنرتب لك شرائح برزنتيشن جاهزة: عنوان، مقدمة، نقاط، وخاتمة."],
+["محول PDF","حوّلي نصوصك لملخص منظم تقدري تنسخيه وتحفظيه."],
+["انفوجرافيك","حوّلي اي معلومة لانفوجرافيك مكتوب بشكل منظم وملون."],
+["خريطة ذهنية","اكتبي فكرتك الاساسية، وهنرسم لك خريطة ذهنية بافكار فرعية مرتبة."],
+["فيديو بالذكاء الاصطناعي","اكتبي فكرة الفيديو، وهنرتب لك مشاهد قصيرة جاهزة للمونتاج."],
+["مونتاج","رتّبي مشاهدك، اضيفي انتقالات ونصوص، واعملي خطة مونتاج كاملة."],
+["ازالة الموسيقى","جهّزي نص التعليق الصوتي بدون موسيقى، عشان فيديو نضيف."],
+["صور بالذكاء الاصطناعي","اوصفي الصورة اللي عايزاها، وهنكتب لك وصف دقيق تولّدي بيه الصورة."],
+["ملخص البحث","الصقي بحثك او لخّصي فكرته، وهنعملك ملخص واضح بالنقاط المهمة."],
+["كاتب المقالات","اكتبي عنوان المقال، وهنكتب لك مقدمة وعناوين وفقرات جاهزة."],
+["تعليق صوتي","اكتبي النص، وهننظمه لك كتعليق صوتي بايقافات ونبرة مناسبة."],
+["تصميم بوستر","اكتبي مناسبة البوستر، وهنصمم لك نص البوستر والالوان والعناوين."],
+["بطاقات تعليمية","اكتبي الدرس، وهنعملك بطاقات سؤال وجواب للمذاكرة."],
+["صانع اختبارات","اكتبي الدرس، وهنعملك 10 اسئلة اختيار من متعدد مع الاجابات."],
+["سيرة ذاتية","اك
