@@ -1,68 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fekra - فكرة | 20 اداة ذكاء اصطناعي</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فكرة - Fekra | كل أدواتك الدراسية</title>
 <style>
-*{box-sizing:border-box;font-family:Tahoma,system-ui,sans-serif}
-body{margin:0;background:#FFF8F0;color:#222}
-header{background:linear-gradient(135deg,#FF6B35,#FF9A5A);color:white;padding:28px 16px;text-align:center;border-radius:0 0 24px 24px}
-header h1{margin:0;font-size:32px}
-header p{margin:8px 0 0;opacity:.95}
-.search{max-width:600px;margin:16px auto;padding:0 14px}
-.search input{width:100%;padding:13px;border-radius:13px;border:1px solid #FFD6C0;font-size:15px;outline:none}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;padding:10px 14px;max-width:920px;margin:auto}
+*{box-sizing:border-box}body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;background:#F8F7FF;color:#1E1B4B}
+header{background:linear-gradient(135deg,#7C3AED,#4F46E5);color:white;padding:28px 18px 34px;text-align:center;border-radius:0 0 28px 28px}
+header h1{margin:0;font-size:32px}header p{opacity:.9;margin:8px 0 18px}
+.search{background:white;border-radius:999px;padding:12px 18px;display:flex;gap:8px;max-width:520px;margin:auto;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.search input{border:none;outline:none;flex:1;font-size:15px;text-align:right}
+.search span{background:#7C3AED;color:white;padding:8px 16px;border-radius:999px;font-size:13px}
+.wrap{max-width:1100px;margin:22px auto;padding:0 14px}
+h2{font-size:19px;margin:22px 4px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{background:white;border-radius:17px;padding:15px;box-shadow:0 4px 13px rgba(0,0,0,.06);cursor:pointer;border:1px solid #FFF0E8}
-.card h3{margin:0 0 5px;font-size:15px;color:#FF6B35}
-.card p{margin:0;font-size:12.5px;color:#777;line-height:1.6}
-.blog{max-width:920px;margin:10px auto 24px;padding:0 14px}
-.blog-card{background:white;border-radius:17px;padding:18px;box-shadow:0 4px 13px rgba(0,0,0,.06)}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center}
-.modal.open{display:flex}
-.sheet{background:white;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:18px;max-height:88vh;overflow:auto}
-.sheet textarea{width:100%;height:110px;border-radius:12px;border:1px solid #ddd;padding:11px;font-size:14px}
-.btn{background:#FF6B35;color:white;border:none;padding:13px;border-radius:11px;width:100%;margin-top:10px;font-size:16px;cursor:pointer}
-.btn2{background:#222;color:white;border:none;padding:12px;border-radius:11px;width:100%;margin-top:8px;font-size:15px;cursor:pointer}
-.close{background:#eee;border:none;padding:7px 12px;border-radius:8px;cursor:pointer}
-.result{background:#FFF8F0;border-radius:11px;padding:12px;margin-top:11px;font-size:14px;line-height:1.8;white-space:pre-wrap}
-footer{text-align:center;color:#999;padding:18px;font-size:12px}
-</style>
-</head>
+.card{background:white;border-radius:18px;padding:16px 12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.05);border:1px solid #EDE9FE}
+.card .ico{font-size:28px;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.card b{font-size:14px;display:block}.card p{font-size:11.5px;color:#6B7280;margin:6px 0 10px;line-height:1.5;min-height:34px}
+.card a{display:block;background:#F5F3FF;color:#6D28D9;padding:8px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px}
+.purple{background:#EDE9FE}.blue{background:#DBEAFE}.green{background:#DCFCE7}.orange{background:#FFEDD5}.pink{background:#FCE7F3}.yellow{background:#FEF9C3}
+.badge{display:inline-block;background:white;color:#7C3AED;font-size:11px;padding:4px 10px;border-radius:999px;font-weight:700}
+footer{text-align:center;padding:20px;color:#9CA3AF;font-size:12px}
+</style></head>
 <body>
-<header><h1>Fekra - فكرة</h1><p>حوّلي فكرتك لمحتوى واعمال حقيقية - 20 اداة في مكان واحد</p></header>
-<div class="search"><input id="search" placeholder="دوري على اداة... مثلا: برزنتيشن، ترجمة، سيرة ذاتية" oninput="filterTools()"></div>
-<div class="grid" id="grid"></div>
-<div class="blog"><div class="blog-card">
-<h2>مدونة Fekra</h2>
-<p>ازاي تحوّلي فكرتك لمشروع؟ ابدأي باداة واحدة، جرّبيها، وانشري نتيجتك. هنا هننزل مقالات اصلية تساعدك تتعلمي وتكبري.</p>
-<p style="color:#FF6B35;font-weight:bold">قريبا: اول 3 مقالات عن الذكاء الاصطناعي للمبتدئين</p>
-</div></div>
-<div class="modal" id="modal"><div class="sheet">
-<button class="close" onclick="closeModal()">اغلاق</button>
-<h2 id="toolTitle"></h2><p id="toolDesc" style="color:#666;line-height:1.7"></p>
-<textarea id="toolInput" placeholder="اكتبي هنا طلبك... مثال: اعملي برزنتيشن عن مشروعي"></textarea>
-<button class="btn" onclick="runTool()">شغّلي الاداة</button>
-<div class="result" id="toolResult" style="display:none"></div>
-<button class="btn2" onclick="downloadResult()">تحميل النتيجة</button>
-</div></div>
-<footer>صُنع بحب بواسطة منار أحمد إبراهيم - Fekra 2026</footer>
-<script>
-const tools=[
-["اسألني","اسألي اي سؤال، وهنساعدك تفهمي وتوصلي للاجابة خطوة بخطوة."],
-["برزنتيشن","اكتبي موضوعك، وهنرتب لك شرائح برزنتيشن جاهزة: عنوان، مقدمة، نقاط، وخاتمة."],
-["محول PDF","حوّلي نصوصك لملخص منظم تقدري تنسخيه وتحفظيه."],
-["انفوجرافيك","حوّلي اي معلومة لانفوجرافيك مكتوب بشكل منظم وملون."],
-["خريطة ذهنية","اكتبي فكرتك الاساسية، وهنرسم لك خريطة ذهنية بافكار فرعية مرتبة."],
-["فيديو بالذكاء الاصطناعي","اكتبي فكرة الفيديو، وهنرتب لك مشاهد قصيرة جاهزة للمونتاج."],
-["مونتاج","رتّبي مشاهدك، اضيفي انتقالات ونصوص، واعملي خطة مونتاج كاملة."],
-["ازالة الموسيقى","جهّزي نص التعليق الصوتي بدون موسيقى، عشان فيديو نضيف."],
-["صور بالذكاء الاصطناعي","اوصفي الصورة اللي عايزاها، وهنكتب لك وصف دقيق تولّدي بيه الصورة."],
-["ملخص البحث","الصقي بحثك او لخّصي فكرته، وهنعملك ملخص واضح بالنقاط المهمة."],
-["كاتب المقالات","اكتبي عنوان المقال، وهنكتب لك مقدمة وعناوين وفقرات جاهزة."],
-["تعليق صوتي","اكتبي النص، وهننظمه لك كتعليق صوتي بايقافات ونبرة مناسبة."],
-["تصميم بوستر","اكتبي مناسبة البوستر، وهنصمم لك نص البوستر والالوان والعناوين."],
-["بطاقات تعليمية","اكتبي الدرس، وهنعملك بطاقات سؤال وجواب للمذاكرة."],
-["صانع اختبارات","اكتبي الدرس، وهنعملك 10 اسئلة اختيار من متعدد مع الاجابات."],
-["سيرة ذاتية","اك
+<header><span class="badge">✦ منصة فكرة التعليمية</span><h1>فكرة 💡</h1><p>كل أدواتك الدراسية في مكان واحد - 20 أداة ذكية</p>
+<div class="search"><input placeholder="دور على أي أداة... مثلا برزنتيشن"><span>بحث</span></div></header>
+<div class="wrap">
+<h2>📚 كل الأدوات - 20 أداة</h2>
+<div class="grid">
+<div class="card"><div class="ico purple">📊</div><b>العروض التقديمية</b><p>برزنتيشن جاهز في دقايق</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico blue">📄</div><b>محول ملفات PDF</b><p>حوّل PDF لأي صيغة</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico green">📈</div><b>انفوجرافيك</b><p>حوّل معلوماتك لرسوم</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico orange">🧠</div><b>خريطة ذهنية</b><p>نظّم أفكارك بصرياً</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico pink">🎬</div><b>فيديو بالذكاء الاصطناعي</b><p>فيديو من نص واحد</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico yellow">✂️</div><b>المونتاج</b><p>قص وعدّل فيديوهاتك</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico purple">🎵</div><b>إزالة الموسيقى</b><p>افصل الصوت عن الموسيقى</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico blue">🎨</div><b>صور بالذكاء الاصطناعي</b><p>صمّم أي صورة تتخيلها</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico green">📝</div><b>ملخص البحث</b><p>لخّص أي بحث طويل</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico orange">✍️</div><b>كاتب المقالات</b><p>اكتب مقال كامل احترافي</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico pink">🎙️</div><b>التعليق الصوتي</b><p>حوّل النص لصوت طبيعي</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico yellow">🖼️</div><b>تصميم الملصق</b><p>بوستر يشد الانتباه</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico purple">🃏</div><b>البطاقات التعليمية</b><p>ذاكر بفلاش كاردز</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico blue">❓</div><b>صانع الاختبارات</b><p>اختبر نفسك بأسئلة ذكية</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico green">💼</div><b>السيرة الذاتية</b><p>CV احترافي يبهر</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico orange">🌐</div><b>الترجمة</b><p>ترجم لأي لغة بدقة</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico pink">🔍</div><b>فحص الانتحال</b><p>اتأكد بحثك أصلي 100%</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico yellow">📅</div><b>المخطط الدراسي</b><p>خطط مذاكرتك صح</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico purple">💡</div><b>مولد الأفكار</b><p>أفكار مشاريع جديدة</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico blue">🤖</div><b>مساعد فكرة AI</b><p>اسأل أي سؤال دراسي</p><a href="#">ابدأ الآن</a></div>
+</div>
+</div>
+<footer>صُنع بحب ❤️ - منصة فكرة 2026</footer>
+</body></html>
