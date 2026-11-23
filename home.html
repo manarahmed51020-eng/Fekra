@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>فكرة - Fekra | كل أدواتك الدراسية</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;background:#F8F7FF;color:#1E1B4B}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;background:#F8F7FF;color:#1E1B4B}
 header{background:linear-gradient(135deg,#7C3AED,#4F46E5);color:white;padding:28px 18px 34px;text-align:center;border-radius:0 0 28px 28px}
-header h1{margin:0;font-size:32px}header p{opacity:.9;margin:8px 0 18px}
+header h1{margin:0;font-size:32px}
+header p{opacity:.9;margin:8px 0 18px}
 .search{background:white;border-radius:999px;padding:12px 18px;display:flex;gap:8px;max-width:520px;margin:auto;box-shadow:0 8px 20px rgba(0,0,0,.15)}
 .search input{border:none;outline:none;flex:1;font-size:15px;text-align:right}
 .search span{background:#7C3AED;color:white;padding:8px 16px;border-radius:999px;font-size:13px}
-.wrap{max-width:1100px;margin:22px auto;padding:0 14px}
+.wrap{max-width:1100px;margin:22px auto;padding:0 12px}
 h2{font-size:19px;margin:22px 4px 12px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{background:white;border-radius:18px;padding:16px 12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.05);border:1px solid #EDE9FE}
-.card .ico{font-size:28px;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
-.card b{font-size:14px;display:block}.card p{font-size:11.5px;color:#6B7280;margin:6px 0 10px;line-height:1.5;min-height:34px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr);gap:12px}}
+.card{background:white;border-radius:18px;padding:16px 10px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.05);border:1px solid #EDE9FE}
+.card .ico{font-size:26px;width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.card b{font-size:13.5px;display:block}
+.card p{font-size:11.5px;color:#6B7280;margin:6px 0 10px;line-height:1.5;min-height:34px}
 .card a{display:block;background:#F5F3FF;color:#6D28D9;padding:8px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px}
 .purple{background:#EDE9FE}.blue{background:#DBEAFE}.green{background:#DCFCE7}.orange{background:#FFEDD5}.pink{background:#FCE7F3}.yellow{background:#FEF9C3}
 .badge{display:inline-block;background:white;color:#7C3AED;font-size:11px;padding:4px 10px;border-radius:999px;font-weight:700}
-footer{text-align:center;padding:20px;color:#9CA3AF;font-size:12px}
-</style></head>
+footer{text-align:center;padding:22px;color:#6D28D9;font-size:14px;font-weight:700;line-height:1.8}
+</style>
+</head>
 <body>
 <header><span class="badge">✦ منصة فكرة التعليمية</span><h1>فكرة 💡</h1><p>كل أدواتك الدراسية في مكان واحد - 20 أداة ذكية</p>
 <div class="search"><input placeholder="دور على أي أداة... مثلا برزنتيشن"><span>بحث</span></div></header>
+
 <div class="wrap">
-<h2>📚 كل الأدوات - 20 أداة</h2>
+<h2>📚 كل الأدوات</h2>
 <div class="grid">
 <div class="card"><div class="ico purple">📊</div><b>العروض التقديمية</b><p>برزنتيشن جاهز في دقايق</p><a href="#">ابدأ الآن</a></div>
 <div class="card"><div class="ico blue">📄</div><b>محول ملفات PDF</b><p>حوّل PDF لأي صيغة</p><a href="#">ابدأ الآن</a></div>
@@ -47,7 +54,12 @@ footer{text-align:center;padding:20px;color:#9CA3AF;font-size:12px}
 <div class="card"><div class="ico yellow">📅</div><b>المخطط الدراسي</b><p>خطط مذاكرتك صح</p><a href="#">ابدأ الآن</a></div>
 <div class="card"><div class="ico purple">💡</div><b>مولد الأفكار</b><p>أفكار مشاريع جديدة</p><a href="#">ابدأ الآن</a></div>
 <div class="card"><div class="ico blue">🤖</div><b>مساعد فكرة AI</b><p>اسأل أي سؤال دراسي</p><a href="#">ابدأ الآن</a></div>
+<div class="card"><div class="ico pink">💬</div><b>اسألني</b><p>مش فاهمة حاجة؟ اسأليني وأنا أحلها معاكي</p><a href="#" onclick="openChat();return false;">اسأل الآن</a></div>
+<div class="card"><div class="ico yellow">📰</div><b>المدونة</b><p>مقالات ونصايح تذاكري بيها أسرع</p><a href="#">اقرأ المدونة</a></div>
 </div>
 </div>
-<footer>صُنع بحب ❤️ - منصة فكرة 2026</footer>
-</body></html>
+
+<footer>صُنع بحب ❤️ بواسطة منار أحمد إبراهيم<br><span style="font-size:12px;color:#9CA3AF;font-weight:400">منصة فكرة 2026</span></footer>
+
+<div id="chatBox" style="display:none;position:fixed;bottom:15px;left:15px;right:15px;max-width:380px;background:white;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;z-index:999">
+<div style="background:#7C3AED;color:white;padding:12px
