@@ -2,104 +2,82 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fekra | فكرة</title>
 <style>
-body{font-family:Arial;background:#fdf2f8;margin:0;padding:12px;text-align:center}
-h1{color:#db2777;font-size:28px}
-.box{background:#fff;border-radius:15px;padding:15px;margin:10px auto;max-width:560px;box-shadow:0 2px 10px #ddd}
-input,select,textarea{width:92%;padding:12px;margin:8px 0;border:2px solid #f9a8d4;border-radius:10px;font-size:16px}
-textarea{height:100px}
-button{background:#db2777;color:#fff;border:0;padding:13px;border-radius:10px;font-size:17px;width:95%;margin:5px}
-.tool{background:#fff;border:1px solid #fbcfe8;border-radius:12px;padding:12px;margin:5px;display:inline-block;width:42%}
-#out{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:15px;margin:10px auto;max-width:560px;text-align:right;white-space:pre-wrap;display:none}
-.slide{display:none;background:#fff;border:2px solid #f9a8d4;border-radius:15px;padding:15px;margin:10px auto;max-width:560px}
-.footer{background:#db2777;color:#fff;border-radius:15px;padding:18px;margin:15px auto;max-width:560px;font-size:18px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:linear-gradient(180deg,#fdf2f8,#ede9fe);color:#1f2937}
+.top{background:linear-gradient(90deg,#db2777,#7c3aed);color:#fff;padding:22px 16px 30px;text-align:center;border-radius:0 0 25px 25px}
+.top h1{margin:0;font-size:32px}
+.card{background:#fff;margin:14px auto;max-width:580px;border-radius:20px;padding:16px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+textarea,select{width:100%;padding:14px;border:2px solid #fbcfe8;border-radius:14px;font-size:16px}
+textarea{height:90px}
+.btn{width:100%;padding:14px;border:0;border-radius:14px;font-size:17px;font-weight:bold;color:#fff;background:linear-gradient(90deg,#db2777,#7c3aed);margin-top:10px}
+.btn2{background:#fff;color:#7c3aed;border:2px solid #ddd6fe}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:16px;padding:14px;font-size:15px;font-weight:bold}
+.slide{background:#fff;border-radius:20px;padding:20px;margin:14px auto;max-width:580px;box-shadow:0 8px 25px rgba(0,0,0,.1);display:none;text-align:center}
+.slide h2{color:#db2777}
+.slide p{font-size:19px;line-height:1.7}
+.out{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:16px;margin:14px auto;max-width:580px;white-space:pre-wrap;text-align:right;display:none;line-height:1.7}
+.foot{background:#111827;color:#fff;text-align:center;padding:20px}
+.foot b{color:#f9a8d4}
 </style>
 </head>
 <body>
-<h1>💡 Fekra | فكرة</h1>
-<p>قولي الاسم أو الصقي النص، وهو يعملك برزنتيشن</p>
-
-<div class="box">
+<div class="top"><h1>💡 Fekra | فكرة</h1><p>حولي فكرتك لمحتوى جميل في ثواني</p></div>
+<div class="card">
 <select id="tool">
 <option value="presentation">🎤 برزنتيشن</option>
 <option value="ask">❓ اسألني</option>
-<option value="pdf">📄 محول PDF</option>
+<option value="article">✍️ كاتب المقالات</option>
+<option value="research">🔍 ملخص البحث</option>
 <option value="infographic">📊 انفوجرافيك</option>
 <option value="mindmap">🧠 خريطة ذهنية</option>
-<option value="video">🎬 فيديو بالذكاء الاصطناعي</option>
+<option value="video">🎬 فيديو</option>
 <option value="montage">✂️ مونتاج</option>
 <option value="music">🎵 إزالة الموسيقى</option>
-<option value="image">🖼️ صور بالذكاء الاصطناعي</option>
-<option value="research">🔍 ملخص البحث</option>
-<option value="article">✍️ كاتب المقالات</option>
+<option value="image">🖼️ صور</option>
 <option value="voice">🎙️ تعليق صوتي</option>
-<option value="poster">🎨 تصميم بوستر</option>
-<option value="cards">🃏 بطاقات تعليمية</option>
-<option value="quiz">📝 صانع اختبارات</option>
+<option value="poster">🎨 بوستر</option>
+<option value="cards">🃏 بطاقات</option>
+<option value="quiz">📝 اختبارات</option>
 <option value="cv">📄 سيرة ذاتية</option>
 <option value="translate">🌍 ترجمة</option>
-<option value="homework">📚 حل واجبات</option>
+<option value="homework">📚 واجبات</option>
 <option value="plan">📅 خطة دراسة</option>
+<option value="pdf">📄 محول PDF</option>
 <option value="extra">✨ أداة إضافية</option>
 </select>
-
-<textarea id="topic" placeholder="اكتبي هنا حاجتين:
-1- اسم الموضوع بس: مثال النظافة
-2- أو الصقي النص كله هنا: مثال النظافة مهمة لأنها تحمينا من الأمراض..."></textarea>
-
-<button onclick="run()">شغلي الأداة ▶</button>
-<button onclick="run()" style="background:#7c3aed">🔄 اعملي واحد جديد تاني</button>
-<p style="font-size:13px;color:#888">لو كتبتي اسم بس هيألف هو، لو لصقتي نص هيحوله لشرائح من نصك</p>
+<textarea id="topic" placeholder="اكتبي اسم الموضوع... أو الصقي النص كله هنا..."></textarea>
+<button class="btn" onclick="run()">✨ اعملي برزنتيشن</button>
+<button class="btn btn2" onclick="run()">🔄 اعملي واحد جديد</button>
 </div>
-
-<div id="out"></div>
+<div id="out" class="out"></div>
 <div id="slides"></div>
-<div id="nav" style="display:none">
-<button onclick="prevS()">⬅ اللي قبله</button>
-<button onclick="nextS()">اللي بعده ➡</button>
-</div>
-
-<div class="box">
-<div class="tool" onclick="setT(0)">🎤 برزنتيشن</div>
-<div class="tool" onclick="setT(1)">❓ اسألني</div>
-<div class="tool" onclick="setT(2)">📄 محول PDF</div>
-<div class="tool" onclick="setT(3)">📊 انفوجرافيك</div>
-<div class="tool" onclick="setT(4)">🧠 خريطة ذهنية</div>
-<div class="tool" onclick="setT(5)">🎬 فيديو</div>
-<div class="tool" onclick="setT(6)">✂️ مونتاج</div>
-<div class="tool" onclick="setT(7)">🎵 إزالة موسيقى</div>
-<div class="tool" onclick="setT(8)">🖼️ صور</div>
-<div class="tool" onclick="setT(9)">🔍 ملخص بحث</div>
-<div class="tool" onclick="setT(10)">✍️ مقالات</div>
-<div class="tool" onclick="setT(11)">🎙️ تعليق صوتي</div>
-<div class="tool" onclick="setT(12)">🎨 بوستر</div>
-<div class="tool" onclick="setT(13)">🃏 بطاقات</div>
-<div class="tool" onclick="setT(14)">📝 اختبارات</div>
-<div class="tool" onclick="setT(15)">📄 سيرة ذاتية</div>
-<div class="tool" onclick="setT(16)">🌍 ترجمة</div>
-<div class="tool" onclick="setT(17)">📚 واجبات</div>
-<div class="tool" onclick="setT(18)">📅 خطة دراسة</div>
-<div class="tool" onclick="setT(19)">✨ أداة إضافية</div>
-</div>
-
-<div class="box"><h3>📝 مدونة Fekra</h3><p>ازاي تحولي فكرتك لمشروع؟</p><p>ازاي تعملي برزنتيشن يبهر الكل؟</p></div>
-<div class="footer">♥️ صنع بحب بواسطة منار أحمد إبراهيم ♥️<br><small>Fekra | فكرة - 2026</small></div>
-
+<div id="nav" class="card" style="display:none"><button class="btn btn2" onclick="prevS()">⬅ اللي قبله</button><button class="btn" onclick="nextS()">اللي بعده ➡</button></div>
+<div class="card"><h3 style="text-align:center">✨ كل أدواتك</h3><div class="grid">
+<div class="item" onclick="pickTool(0)">🎤 برزنتيشن</div><div class="item" onclick="pickTool(1)">❓ اسألني</div><div class="item" onclick="pickTool(2)">✍️ مقالات</div><div class="item" onclick="pickTool(3)">🔍 ملخص بحث</div><div class="item" onclick="pickTool(4)">📊 انفوجرافيك</div><div class="item" onclick="pickTool(5)">🧠 خريطة ذهنية</div><div class="item" onclick="pickTool(6)">🎬 فيديو</div><div class="item" onclick="pickTool(7)">✂️ مونتاج</div><div class="item" onclick="pickTool(8)">🎵 إزالة موسيقى</div><div class="item" onclick="pickTool(9)">🖼️ صور</div><div class="item" onclick="pickTool(10)">🎙️ تعليق صوتي</div><div class="item" onclick="pickTool(11)">🎨 بوستر</div><div class="item" onclick="pickTool(12)">🃏 بطاقات</div><div class="item" onclick="pickTool(13)">📝 اختبارات</div><div class="item" onclick="pickTool(14)">📄 سيرة ذاتية</div><div class="item" onclick="pickTool(15)">🌍 ترجمة</div><div class="item" onclick="pickTool(16)">📚 واجبات</div><div class="item" onclick="pickTool(17)">📅 خطة دراسة</div><div class="item" onclick="pickTool(18)">📄 محول PDF</div><div class="item" onclick="pickTool(19)">✨ أداة إضافية</div>
+</div></div>
+<div class="card" style="text-align:center"><h3>📝 مدونة Fekra</h3><p>ازاي تحولي فكرتك لمشروع؟</p><p>ازاي تعملي برزنتيشن يبهر الكل؟</p></div>
+<div class="foot">♥️ صنع بحب بواسطة <b>منار أحمد إبراهيم</b> ♥️<br><small>Fekra | فكرة - 2026</small></div>
 <script>
-var cur=0,tot=0;
-function setT(i){document.getElementById("tool").selectedIndex=i;window.scrollTo(0,0);document.getElementById("topic").focus();}
-function showOut(txt){var o=document.getElementById("out");o.style.display="block";o.innerText=txt;window.scrollTo(0,350);}
+var cur=0;
+function pickTool(i){document.getElementById("tool").selectedIndex=i;window.scrollTo(0,200);document.getElementById("topic").focus();}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function run(){
 var t=document.getElementById("topic").value.trim();
 var tool=document.getElementById("tool").value;
-if(t==""){alert("اكتبي الموضوع أو الصقي النص الأول");return;}
+if(!t){alert("اكتبي الموضوع الأول");return;}
 document.getElementById("slides").innerHTML="";
 document.getElementById("nav").style.display="none";
-
-// لو النص طويل - يعني بعت النص نفسه
-if(tool=="presentation" && t.length>60){
-var parts=t.split(/\.|\n|،/).filter(function(x){return x.trim().length>5;});
+document.getElementById("out").style.display="none";
+if(tool=="presentation"){
 var s=document.getElementById("slides");
+if(t.length>60){
+var parts=t.split(/\.|\n|،/).filter(function(x){return x.trim().length>5});
+var d0=document.createElement("div");d0.className="slide";d0.innerHTML="<h2>المقدمة</h2><p>"+t.substring(0,80)+"</p>";s.appendChild(d0);
+for(var i=0;i<parts.length && i<4;i++){var d=document.createElement("div");d.className="slide";d.innerHTML="<h2>شريحة "+(i+1)+"</h2><p>"+parts[i].trim()+"</p>";s.appendChild(d);}
+var dl=document.createElement("div");dl.className="slide";dl.innerHTML="<h2>الخاتمة</h2><p>شكرا ليكم ❤️</p>";s.appendChild(dl);
+}else{
+var titles=["المقدمة","يعني ايه "+t+" ؟","ليه "+t+" مهم؟","مثال عن "+t,"ال
