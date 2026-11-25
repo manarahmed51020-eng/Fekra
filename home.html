@@ -1,124 +1,105 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>فكرة - Fekra | كل أدواتك الدراسية</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fekra | فكرة</title>
 <style>
-*{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;background:#F8F7FF;color:#1E1B4B}
-.top{background:#6D28D9;color:white;text-align:center;padding:8px;font-size:13px;font-weight:700}
-.header{background:white;padding:12px;display:flex;align-items:center;gap:10px;max-width:1100px;margin:auto;flex-wrap:wrap}
-.logo{font-size:24px;font-weight:900;color:#6D28D9} .logo span{font-size:11px;display:block;color:#999;font-weight:400}
-.search{flex:1;display:flex;background:#F3F4F6;border-radius:999px;padding:4px 4px 4px 12px;min-width:200px}
-.search input{border:none;outline:none;flex:1;background:transparent;padding:8px} .search button{background:#7C3AED;color:white;border:none;padding:8px 16px;border-radius:999px}
-.nav{display:flex;gap:14px;justify-content:center;background:white;padding:10px;font-size:13px;font-weight:700;border-top:1px solid #eee;flex-wrap:wrap} .nav b{color:#7C3AED}
-.hero{background:linear-gradient(90deg,#EDE9FE,#DDD6FE);border-radius:20px;margin:12px auto;max-width:1100px;padding:22px;text-align:center}
-.hero h1{margin:0;font-size:28px;color:#4C1D95} .hero p{color:#555} .hero a{background:#7C3AED;color:white;padding:10px 22px;border-radius:999px;text-decoration:none;display:inline-block;font-weight:700}
-.cats{display:flex;gap:10px;overflow:auto;max-width:1100px;margin:14px auto;padding:0 12px}
-.cat{background:white;min-width:95px;border-radius:16px;padding:12px 6px;text-align:center;border:1px solid #EDE9FE;font-size:12px;font-weight:700;cursor:pointer}
-.cat div{font-size:26px}
-.wrap{max-width:1100px;margin:auto;padding:0 12px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr);gap:12px}}
-.card{background:white;border-radius:18px;padding:12px;text-align:center;border:1px solid #EDE9FE;box-shadow:0 3px 10px rgba(0,0,0,.04)}
-.card .img{font-size:38px;background:#F5F3FF;border-radius:14px;padding:14px 0;margin-bottom:8px}
-.card b{font-size:13.5px} .card p{font-size:11.5px;color:#777;margin:5px 0} .card a{display:block;background:#7C3AED;color:white;padding:8px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:700;cursor:pointer}
-.blog{display:grid;gap:12px;margin-top:14px} @media(min-width:700px){.blog{grid-template-columns:repeat(3,1fr)}}
-.post{background:white;border-radius:18px;padding:14px;border:1px solid #EDE9FE;font-size:13px;line-height:1.7}
-.ad{background:#FFF7ED;border:1px dashed #FDBA74;border-radius:14px;padding:14px;text-align:center;font-size:13px;margin:14px 0}
-footer{background:#6D28D9;color:white;text-align:center;padding:18px;font-size:13px;line-height:1.8}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;padding:15px;overflow:auto;display:none}
-.modalBox{background:white;max-width:600px;margin:auto;border-radius:20px;padding:18px}
-input,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;margin-top:10px;font-family:inherit}
-.btn{width:100%;margin-top:10px;background:#7C3AED;color:white;border:none;padding:12px;border-radius:12px;font-weight:700;cursor:pointer}
+body{font-family:Arial;background:#fdf2f8;margin:0;padding:12px;text-align:center}
+h1{color:#db2777;font-size:28px}
+.box{background:#fff;border-radius:15px;padding:15px;margin:10px auto;max-width:560px;box-shadow:0 2px 10px #ddd}
+input,select,textarea{width:92%;padding:12px;margin:8px 0;border:2px solid #f9a8d4;border-radius:10px;font-size:16px}
+textarea{height:100px}
+button{background:#db2777;color:#fff;border:0;padding:13px;border-radius:10px;font-size:17px;width:95%;margin:5px}
+.tool{background:#fff;border:1px solid #fbcfe8;border-radius:12px;padding:12px;margin:5px;display:inline-block;width:42%}
+#out{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:15px;margin:10px auto;max-width:560px;text-align:right;white-space:pre-wrap;display:none}
+.slide{display:none;background:#fff;border:2px solid #f9a8d4;border-radius:15px;padding:15px;margin:10px auto;max-width:560px}
+.footer{background:#db2777;color:#fff;border-radius:15px;padding:18px;margin:15px auto;max-width:560px;font-size:18px}
 </style>
 </head>
 <body>
-<div class="top">💡 منصة فكرة - كل أدواتك الدراسية في مكان واحد مجاناً</div>
-<div class="header"><div class="logo">💡 فكرة <span>كل أدواتك الدراسية</span></div><div class="search"><input id="searchInput" oninput="doSearch()" placeholder="دور على أي أداة... مثلا برزنتيشن"><button onclick="doSearch()">🔍</button></div><div>⭐ الأدوات &nbsp; 💬 اسألني</div></div>
-<div class="nav"><b>الرئيسية</b><span>كل الأدوات</span><span>المدونة</span><span onclick="openChat()">اسألني</span><span>من نحن</span><span>تواصل معنا</span></div>
-<div class="hero"><h1>كل أدواتك الدراسية في مكان واحد</h1><p>20 أداة ذكية مجانية تساعدك تذاكر أسرع وتجيب الدرجة النهائية</p><a href="#tools">ابدأ الآن ←</a></div>
-<div class="cats">
-<div class="cat" onclick="openTool('العروض التقديمية')"><div>📊</div>برزنتيشن</div>
-<div class="cat" onclick="openTool('خريطة ذهنية')"><div>🧠</div>خريطة ذهنية</div>
-<div class="cat" onclick="openTool('فيديو AI')"><div>🎬</div>فيديو AI</div>
-<div class="cat" onclick="openTool('ملخص البحث')"><div>📝</div>ملخص بحث</div>
-<div class="cat" onclick="openTool('صانع اختبارات')"><div>❓</div>اختبارات</div>
-<div class="cat" onclick="openChat()"><div>💬</div>اسألني</div>
-<div class="cat" onclick="document.getElementById('blog').scrollIntoView()"><div>📰</div>المدونة</div>
-<div class="cat" onclick="openTool('مساعد فكرة AI')"><div>🤖</div>مساعد AI</div>
-</div>
-<div class="wrap">
-<div class="ad">📢 مكان إعلان جوجل - هنا هيظهر الاعلان بعد القبول في AdSense</div>
-<h2 id="tools">⭐ كل الأدوات - 20 أداة - دوسي على أي واحدة هتشتغل</h2>
-<div class="grid" id="toolsGrid">
-<div class="card" data-name="العروض التقديمية برزنتيشن"><div class="img">📊</div><b>العروض التقديمية</b><p>برزنتيشن جديد كل مرة</p><a onclick="openPres()">ابدأ الآن</a></div>
-<div class="card" data-name="محول PDF"><div class="img">📄</div><b>محول PDF</b><p>حوّل لأي صيغة</p><a onclick="openTool('محول PDF')">ابدأ الآن</a></div>
-<div class="card" data-name="انفوجرافيك"><div class="img">📈</div><b>انفوجرافيك</b><p>رسوم من معلوماتك</p><a onclick="openTool('انفوجرافيك')">ابدأ الآن</a></div>
-<div class="card" data-name="خريطة ذهنية"><div class="img">🧠</div><b>خريطة ذهنية</b><p>نظّم أفكارك</p><a onclick="openTool('خريطة ذهنية')">ابدأ الآن</a></div>
-<div class="card" data-name="فيديو AI"><div class="img">🎬</div><b>فيديو AI</b><p>فيديو من نص واحد</p><a onclick="openTool('فيديو AI')">ابدأ الآن</a></div>
-<div class="card" data-name="المونتاج"><div class="img">✂️</div><b>المونتاج</b><p>قص وعدّل</p><a onclick="openTool('المونتاج')">ابدأ الآن</a></div>
-<div class="card" data-name="إزالة الموسيقى"><div class="img">🎵</div><b>إزالة الموسيقى</b><p>افصل الصوت</p><a onclick="openTool('إزالة الموسيقى')">ابدأ الآن</a></div>
-<div class="card" data-name="صور AI"><div class="img">🎨</div><b>صور AI</b><p>صمّم أي صورة</p><a onclick="openTool('صور AI')">ابدأ الآن</a></div>
-<div class="card" data-name="ملخص البحث"><div class="img">📝</div><b>ملخص البحث</b><p>لخّص أي بحث</p><a onclick="openTool('ملخص البحث')">ابدأ الآن</a></div>
-<div class="card" data-name="كاتب المقالات"><div class="img">✍️</div><b>كاتب المقالات</b><p>مقال احترافي</p><a onclick="openTool('كاتب المقالات')">ابدأ الآن</a></div>
-<div class="card" data-name="تعليق صوتي"><div class="img">🎙️</div><b>تعليق صوتي</b><p>نص لصوت</p><a onclick="openTool('تعليق صوتي')">ابدأ الآن</a></div>
-<div class="card" data-name="تصميم ملصق"><div class="img">🖼️</div><b>تصميم ملصق</b><p>بوستر يشد</p><a onclick="openTool('تصميم ملصق')">ابدأ الآن</a></div>
-<div class="card" data-name="بطاقات تعليمية"><div class="img">🃏</div><b>بطاقات تعليمية</b><p>فلاش كاردز</p><a onclick="openTool('بطاقات تعليمية')">ابدأ الآن</a></div>
-<div class="card" data-name="صانع اختبارات"><div class="img">❓</div><b>صانع اختبارات</b><p>اختبر نفسك</p><a onclick="openTool('صانع اختبارات')">ابدأ الآن</a></div>
-<div class="card" data-name="سيرة ذاتية"><div class="img">💼</div><b>سيرة ذاتية</b><p>CV احترافي</p><a onclick="openTool('سيرة ذاتية')">ابدأ الآن</a></div>
-<div class="card" data-name="ترجمة"><div class="img">🌐</div><b>ترجمة</b><p>ترجم بدقة</p><a onclick="openTool('ترجمة')">ابدأ الآن</a></div>
-<div class="card" data-name="فحص انتحال"><div class="img">🔍</div><b>فحص انتحال</b><p>بحث أصلي 100%</p><a onclick="openTool('فحص انتحال')">ابدأ الآن</a></div>
-<div class="card" data-name="مخطط دراسي"><div class="img">📅</div><b>مخطط دراسي</b><p>خطط صح</p><a onclick="openTool('مخطط دراسي')">ابدأ الآن</a></div>
-<div class="card" data-name="مولد أفكار"><div class="img">💡</div><b>مولد أفكار</b><p>أفكار جديدة</p><a onclick="openTool('مولد أفكار')">ابدأ الآن</a></div>
-<div class="card" data-name="مساعد فكرة AI"><div class="img">🤖</div><b>مساعد فكرة AI</b><p>اسأل أي سؤال</p><a onclick="openChat()">ابدأ الآن</a></div>
-<div class="card" data-name="اسألني"><div class="img">💬</div><b>اسألني</b><p>مش فاهمة؟ اسأليني</p><a onclick="openChat()">اسأل الآن</a></div>
-<div class="card" data-name="المدونة"><div class="img">📰</div><b>المدونة</b><p>نصايح ومقالات</p><a onclick="document.getElementById('blog').scrollIntoView()">اقرأ المدونة</a></div>
-</div>
-<h2 id="blog">📰 المدونة</h2>
-<div class="blog">
-<div class="post"><b>ازاي تعمل برزنتيشن يجيب الدرجة النهائية؟</b><br>اختار ألوان هادية، متكتبش كلام كتير، وحط صورة قوية. جرب أداة البرزنتيشن في فكرة، هتعملك عرض جديد كل مرة.</div>
-<div class="post"><b>ازاي تذاكر 5 ساعات في ساعتين؟</b><br>ذاكر 25 دقيقة وريح 5 دقايق، واعمل خريطة ذهنية بعد كل درس، المخ بيفتكر الصور أكتر.</div>
-<div class="post"><b>ازاي تكتب بحث من غير ما يطلع منقول؟</b><br>افهم المصدر واكتبه بكلامك، واستخدم فحص الانتحال عشان تتأكد بحثك أصلي.</div>
-</div>
-<div class="ad">📢 مكان إعلان جوجل الثاني</div>
-</div>
-<footer>صُنع بحب ❤️ بواسطة منار أحمد إبراهيم<br>منصة فكرة 2026 - جميع الحقوق محفوظة</footer>
+<h1>💡 Fekra | فكرة</h1>
+<p>قولي الاسم أو الصقي النص، وهو يعملك برزنتيشن</p>
 
-<!-- شات -->
-<div id="chatBox" style="display:none;position:fixed;bottom:15px;left:15px;right:15px;max-width:380px;background:white;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;z-index:999">
-<div style="background:#7C3AED;color:white;padding:12px 14px;display:flex;justify-content:space-between"><b>💬 اسألني - فكرة</b><span onclick="document.getElementById('chatBox').style.display='none'" style="cursor:pointer">✕</span></div>
-<div id="chatMsgs" style="height:260px;overflow:auto;padding:12px;font-size:13px;line-height:1.6"><div style="background:#F5F3FF;padding:8px 10px;border-radius:12px">أهلاً بيكي 💜 اسأليني أي سؤال دراسي!</div></div>
-<div style="display:flex;padding:10px;gap:6px;border-top:1px solid #eee"><input id="chatInput" placeholder="اكتبي سؤالك..." style="flex:1;border:1px solid #ddd;border-radius:999px;padding:9px 12px;outline:none"><button onclick="sendMsg()" style="background:#7C3AED;color:white;border:none;padding:9px 14px;border-radius:999px">ارسال</button></div></div>
+<div class="box">
+<select id="tool">
+<option value="presentation">🎤 برزنتيشن</option>
+<option value="ask">❓ اسألني</option>
+<option value="pdf">📄 محول PDF</option>
+<option value="infographic">📊 انفوجرافيك</option>
+<option value="mindmap">🧠 خريطة ذهنية</option>
+<option value="video">🎬 فيديو بالذكاء الاصطناعي</option>
+<option value="montage">✂️ مونتاج</option>
+<option value="music">🎵 إزالة الموسيقى</option>
+<option value="image">🖼️ صور بالذكاء الاصطناعي</option>
+<option value="research">🔍 ملخص البحث</option>
+<option value="article">✍️ كاتب المقالات</option>
+<option value="voice">🎙️ تعليق صوتي</option>
+<option value="poster">🎨 تصميم بوستر</option>
+<option value="cards">🃏 بطاقات تعليمية</option>
+<option value="quiz">📝 صانع اختبارات</option>
+<option value="cv">📄 سيرة ذاتية</option>
+<option value="translate">🌍 ترجمة</option>
+<option value="homework">📚 حل واجبات</option>
+<option value="plan">📅 خطة دراسة</option>
+<option value="extra">✨ أداة إضافية</option>
+</select>
 
-<!-- برزنتيشن -->
-<div id="presBox" class="modal"><div class="modalBox"><div style="display:flex;justify-content:space-between"><b>📊 صانع البرزنتيشن - كل مرة مختلف</b><span onclick="closeAll()" style="cursor:pointer">✕</span></div><input id="presTopic" placeholder="مثلا: الطاقة الشمسية..."><button class="btn" onclick="makePres()">✨ اعملي برزنتيشن جديد</button><div id="presResult"></div></div></div>
+<textarea id="topic" placeholder="اكتبي هنا حاجتين:
+1- اسم الموضوع بس: مثال النظافة
+2- أو الصقي النص كله هنا: مثال النظافة مهمة لأنها تحمينا من الأمراض..."></textarea>
 
-<!-- أداة عامة لكل الـ 20 -->
-<div id="toolBox" class="modal"><div class="modalBox"><div style="display:flex;justify-content:space-between"><b id="toolTitle">أداة</b><span onclick="closeAll()" style="cursor:pointer">✕</span></div><p id="toolDesc" style="font-size:13px;color:#666"></p><textarea id="toolInput" rows="4" placeholder="اكتبي هنا موضوعك أو نصك..."></textarea><button class="btn" onclick="runTool()">✨ نفّذ الآن</button><div id="toolResult" style="margin-top:12px;font-size:13px;line-height:1.8"></div></div></div>
+<button onclick="run()">شغلي الأداة ▶</button>
+<button onclick="run()" style="background:#7c3aed">🔄 اعملي واحد جديد تاني</button>
+<p style="font-size:13px;color:#888">لو كتبتي اسم بس هيألف هو، لو لصقتي نص هيحوله لشرائح من نصك</p>
+</div>
+
+<div id="out"></div>
+<div id="slides"></div>
+<div id="nav" style="display:none">
+<button onclick="prevS()">⬅ اللي قبله</button>
+<button onclick="nextS()">اللي بعده ➡</button>
+</div>
+
+<div class="box">
+<div class="tool" onclick="setT(0)">🎤 برزنتيشن</div>
+<div class="tool" onclick="setT(1)">❓ اسألني</div>
+<div class="tool" onclick="setT(2)">📄 محول PDF</div>
+<div class="tool" onclick="setT(3)">📊 انفوجرافيك</div>
+<div class="tool" onclick="setT(4)">🧠 خريطة ذهنية</div>
+<div class="tool" onclick="setT(5)">🎬 فيديو</div>
+<div class="tool" onclick="setT(6)">✂️ مونتاج</div>
+<div class="tool" onclick="setT(7)">🎵 إزالة موسيقى</div>
+<div class="tool" onclick="setT(8)">🖼️ صور</div>
+<div class="tool" onclick="setT(9)">🔍 ملخص بحث</div>
+<div class="tool" onclick="setT(10)">✍️ مقالات</div>
+<div class="tool" onclick="setT(11)">🎙️ تعليق صوتي</div>
+<div class="tool" onclick="setT(12)">🎨 بوستر</div>
+<div class="tool" onclick="setT(13)">🃏 بطاقات</div>
+<div class="tool" onclick="setT(14)">📝 اختبارات</div>
+<div class="tool" onclick="setT(15)">📄 سيرة ذاتية</div>
+<div class="tool" onclick="setT(16)">🌍 ترجمة</div>
+<div class="tool" onclick="setT(17)">📚 واجبات</div>
+<div class="tool" onclick="setT(18)">📅 خطة دراسة</div>
+<div class="tool" onclick="setT(19)">✨ أداة إضافية</div>
+</div>
+
+<div class="box"><h3>📝 مدونة Fekra</h3><p>ازاي تحولي فكرتك لمشروع؟</p><p>ازاي تعملي برزنتيشن يبهر الكل؟</p></div>
+<div class="footer">♥️ صنع بحب بواسطة منار أحمد إبراهيم ♥️<br><small>Fekra | فكرة - 2026</small></div>
 
 <script>
-let currentTool='';
-function closeAll(){document.querySelectorAll('.modal').forEach(m=>m.style.display='none')}
-function openChat(){document.getElementById('chatBox').style.display='block'}
-function sendMsg(){let inp=document.getElementById('chatInput');if(!inp.value)return;let box=document.getElementById('chatMsgs');box.innerHTML+='<div style="background:#7C3AED;color:white;padding:8px 10px;border-radius:12px;margin:8px 0">'+inp.value+'</div>';let q=inp.value;inp.value='';setTimeout(()=>{box.innerHTML+='<div style="background:#F5F3FF;padding:8px 10px;border-radius:12px">تمام فهمتك 💜 هساعدك في "'+q+'" ابعتيلي التفاصيل وأحله معاكي خطوة بخطوة.</div>';box.scrollTop=box.scrollHeight},600)}
-function doSearch(){let v=document.getElementById('searchInput').value.trim();document.querySelectorAll('#toolsGrid .card').forEach(c=>{c.style.display = !v || c.dataset.name.includes(v) ? 'block' : 'none'})}
-function openPres(){closeAll();document.getElementById('presBox').style.display='block'}
-function makePres(){let topic=document.getElementById('presTopic').value||'موضوعك الدراسي';let colors=[['#7C3AED','#4F46E5'],['#059669','#10B981'],['#EA580C','#F59E0B'],['#DB2777','#F472B6'],['#0891B2','#06B6D4']];let layouts=['عنوان كبير في النص','عنوان على اليمين وصورة على الشمال','3 نقط رئيسية','سؤال وجواب','قصة قصيرة'];let c=colors[Math.floor(Math.random()*colors.length)];let l=layouts[Math.floor(Math.random()*layouts.length)];let r=Math.floor(Math.random()*1000);document.getElementById('presResult').innerHTML=`<div style="margin-top:14px;border-radius:16px;overflow:hidden;border:1px solid #eee"><div style="background:linear-gradient(135deg,${c[0]},${c[1]});color:white;padding:20px;text-align:center"><h3>${topic}</h3><p style="font-size:12px">شكل رقم #${r} - تصميم: ${l}</p></div><div style="padding:14px;font-size:13px;line-height:1.8"><b>شريحة 1: المقدمة</b><br>هنتكلم عن ${topic} بطريقة سهلة.<br><br><b>شريحة 2: الفكرة الرئيسية</b><br>أهم 3 نقط في ${topic}.<br><br><b>شريحة 3: مثال عملي</b><br>مثال من حياتنا يوضح ${topic}.<br><br><b>شريحة 4: الخلاصة</b><br>لو فهمتي دول، فهمتي ${topic} كله 💜</div><button onclick="makePres()" class="btn">🔄 اعملي واحد تاني مختلف</button></div>`}
+var cur=0,tot=0;
+function setT(i){document.getElementById("tool").selectedIndex=i;window.scrollTo(0,0);document.getElementById("topic").focus();}
+function showOut(txt){var o=document.getElementById("out");o.style.display="block";o.innerText=txt;window.scrollTo(0,350);}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function run(){
+var t=document.getElementById("topic").value.trim();
+var tool=document.getElementById("tool").value;
+if(t==""){alert("اكتبي الموضوع أو الصقي النص الأول");return;}
+document.getElementById("slides").innerHTML="";
+document.getElementById("nav").style.display="none";
 
-function openTool(name){currentTool=name;closeAll();document.getElementById('toolBox').style.display='block';document.getElementById('toolTitle').innerText='✨ '+name;document.getElementById('toolResult').innerHTML='';document.getElementById('toolInput').value='';let descs={'محول PDF':'اكتبي اسم الملف أو النص، وهنحوله لك.','انفوجرافيك':'اكتبي موضوعك وهنعملك شكل انفوجرافيك.','خريطة ذهنية':'اكتبي الدرس وهنعملك خريطة ذهنية.','فيديو AI':'اكتبي فكرة الفيديو وهنعملك سكربت.','المونتاج':'اكتبي وصف الفيديو وهنقولك ازاي تمونتجيه.','إزالة الموسيقى':'ارفعي ملف الصوت بعد كده، ودلوقتي هنجهزلك الخطوات.','صور AI':'اكتبي وصف الصورة وهنعملك فكرة تصميم.','ملخص البحث':'الصقي نص البحث هنا وهنلخصه.','كاتب المقالات':'اكتبي عنوان المقال وهنكتبلك مقدمة.','تعليق صوتي':'اكتبي النص وهنحوله لصوت.','تصميم ملصق':'اكتبي عنوان الملصق وهنصمملك فكرة.','بطاقات تعليمية':'اكتبي الدرس وهنعملك فلاش كاردز.','صانع اختبارات':'اكتبي الدرس وهنعملك اسئلة.','سيرة ذاتية':'اكتبي اسمك ومجالك وهنعملك CV.','ترجمة':'اكتبي الجملة وهنترجمها.','فحص انتحال':'الصقي نصك وهنفحصه.','مخطط دراسي':'اكتبي موادك وهنعملك جدول.','مولد أفكار':'اكتبي مجالك وهنطلعلك أفكار.'};document.getElementById('toolDesc').innerText=descs[name]||'اكتبي موضوعك وابدأي.';document.getElementById('toolInput').placeholder='اكتبي هنا ... موضوع '+name;}
-
-function runTool(){let txt=document.getElementById('toolInput').value.trim()||'موضوعك';let out=document.getElementById('toolResult');let t=currentTool;
-if(t=='ترجمة'){out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px"><b>الترجمة:</b><br>بالانجليزي: The topic "${txt}" is very important for your study.<br>بالعربي: موضوع "${txt}" مهم جداً لمذاكرتك 💜<br><br><button onclick="runTool()" class="btn">🔄 ترجم جملة تانية</button></div>`}
-else if(t=='ملخص البحث'){out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px"><b>ملخص "${txt.slice(0,40)}":</b><br>• الفكرة الرئيسية: ${txt.slice(0,60)}<br>• أهم نقطة: لازم تفهمي الأساس قبل التفاصيل<br>• الخلاصة: الموضوع ده مهم وهيجي في الامتحان 💜</div>`}
-else if(t=='خريطة ذهنية'){out.innerHTML=`<div style="text-align:center;background:#F5F3FF;padding:12px;border-radius:12px"><b style="background:#7C3AED;color:white;padding:6px 12px;border-radius:999px;display:inline-block">${txt}</b><br><br><span style="background:white;padding:6px 10px;border-radius:10px;display:inline-block;margin:3px">💡 تعريف</span> <span style="background:white;padding:6px 10px;border-radius:10px;display:inline-block;margin:3px">📌 مثال</span> <span style="background:white;padding:6px 10px;border-radius:10px;display:inline-block;margin:3px">⭐ أهمية</span><br><span style="background:white;padding:6px 10px;border-radius:10px;display:inline-block;margin:3px">📝 ملخص</span> <span style="background:white;padding:6px 10px;border-radius:10px;display:inline-block;margin:3px">❓ سؤال</span></div>`}
-else if(t=='صانع اختبارات'){out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px"><b>اختبار في: ${txt}</b><br><br>1. ما هو تعريف ${txt}؟<br>أ) تعريف صحيح ب) تعريف غلط ج) مش عارفة<br><br>2. اذكري مثال على ${txt}؟<br>__________________<br><br>3. صح ولا غلط: ${txt} مهم في حياتنا؟ ( صح ✅ )</div>`}
-else if(t=='بطاقات تعليمية'){out.innerHTML=`<div style="display:flex;gap:8px"><div style="flex:1;background:#7C3AED;color:white;padding:14px;border-radius:12px;text-align:center"><b>السؤال</b><br>${txt} يعني ايه؟</div><div style="flex:1;background:#F59E0B;color:white;padding:14px;border-radius:12px;text-align:center"><b>الجواب</b><br>فكرة مهمة لازم تحفظيها 💜</div></div>`}
-else if(t=='تعليق صوتي'){try{speechSynthesis.speak(new SpeechSynthesisUtterance(txt))}catch(e){} out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px">🔊 شغلت الصوت دلوقتي: "${txt}"<br>لو الصوت مشتغلش، دوسي تاني.</div>`}
-else if(t=='مخطط دراسي'){out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px"><b>جدول مذاكرة لـ ${txt}:</b><br>السبت: 25 دقيقة مذاكرة + 5 راحة<br>الأحد: مراجعة + خريطة ذهنية<br>الاثنين: حل اسئلة<br>الثلاثاء: مراجعة نهائية 💜</div>`}
-else if(t=='مولد أفكار'){out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px">💡 3 أفكار في ${txt}:<br>1. فكرة فيديو قصير عن ${txt}<br>2. فكرة برزنتيشن مميز<br>3. فكرة بحث جديد<br><br><button onclick="runTool()" class="btn">🔄 هات أفكار تانية</button></div>`}
-else if(t=='فحص انتحال'){let score=85+Math.floor(Math.random()*14);out.innerHTML=`<div style="background:#ECFDF5;padding:12px;border-radius:12px">✅ نسبة الأصالة: ${score}%<br>بحثك أصلي وممتاز يا منار 💜<br>نصيحة: غيري كام كلمة بكلامك عشان توصلي 100%</div>`}
-else {out.innerHTML=`<div style="background:#F5F3FF;padding:12px;border-radius:12px"><b>تم يا منار 💜</b><br>عملتلك نتيجة لأداة <b>${t}</b> عن موضوع: <b>${txt}</b><br><br>• الخطوة 1: فهم الموضوع<br>• الخطوة 2: تنظيم الأفكار<br>• الخطوة 3: النتيجة النهائية جاهزة<br><br><button onclick="runTool()" class="btn">🔄 اعملي واحد تاني</button></div>`}
-}
-</script>
-</body>
-</html>
+// لو النص طويل - يعني بعت النص نفسه
+if(tool=="presentation" && t.length>60){
+var parts=t.split(/\.|\n|،/).filter(function(x){return x.trim().length>5;});
+var s=document.getElementById("slides");
